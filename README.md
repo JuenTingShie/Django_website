@@ -12,8 +12,8 @@ What the website got now:
 >A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
 
 ## Version 18.10.6
->1.Make a app 'restaurants',countain some 'restaurant' 'food'    
+>*   1.Make a app 'restaurants',countain some 'restaurant' 'food'    
 >And 'food.name' 'food.price' .... and else.    
->2.Replace ( ~/menu ) to the app('restaurants') /at restaurants/views.py    
+>*   2.Replace ( ~/menu ) to the app('restaurants') /at restaurants/views.py    
 >And a table to output.    
->3.Add a admin to manage 'Restaurant' & 'Food'.    
+>*   3.Add a admin to manage 'Restaurant' & 'Food'.    
