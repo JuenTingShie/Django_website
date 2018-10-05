@@ -1,0 +1,33 @@
+<title>菜單</title>
+	<style>
+		table,th,td{
+			border:1px solid black}
+	</style>
+	<body>
+		{% for r in restaurants %}
+		<h2>{{ r.name }}</h2>
+		{% if r.food_set.all %}
+		<table>
+			<tr>
+				<th>食物的名字:</th>
+				<th>價錢:</th>
+				<th>食物說明:</th>
+				<th>食物會不會辣:</th>
+			</tr>
+			{% for food in r.food_set.all %}
+			<tr>
+					<th>{{ food.name }}</th>
+					<th>{{ food.price }}</th>
+					<th>{{ food.comment }}</th>
+					<th>{% if food.spicy %} 辣
+						{% else %} 不辣
+						{% endif %}</th>
+				</tr>
+		</table>
+			{% endfor %}
+		</table>
+		{% else %}
+			<h1>抱歉!我們還沒開始販售任何食物</h1>
+		{% endif %}
+		{% endfor %}
+	</body>

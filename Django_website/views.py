@@ -9,3 +9,5 @@ def math(request,a,b):
 	p = a*b
 	q = a/b
 	return render_to_response('math.html',locals())
+def history(request):
+	return render_to_response('history.html')
