@@ -1,0 +1,9 @@
+<html>
+    <title>AI寫詩</title>
+    <body>
+        {% for post in posts %}
+            <a href='/post/{{ post.slug }}'>{{ post.title }}</a>
+            at.<small>{{ post.publish_time }}</small><br>
+        {% endfor %}
+    </body>
+</html>

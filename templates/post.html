@@ -1,0 +1,9 @@
+<html>
+    <title>{{ post.title }}--AI寫詩</title>
+    <body>
+        <a href='/post/{{ post.slug }}'>{{ post.title }}</a>
+        at.<small><small>{{ post.publish_time }}</small></small>
+        <hr>
+        {{ post.context | safe |linebreaksbr }}
+    </body>
+</html>
