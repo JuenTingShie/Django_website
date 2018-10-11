@@ -1,9 +1,11 @@
-<html>
-    <title>{{ post.title }}--AI寫詩</title>
-    <body>
-        <a href='/post/{{ post.slug }}'>{{ post.title }}</a>
-        at.<small><small>{{ post.publish_time }}</small></small>
-        <hr>
-        {{ post.context | safe |linebreaksbr }}
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block title %}
+{{ post.title }}--AI寫詩
+{% endblock title %}
+{% block context %}
+    <h3><a href='/post/{{ post.slug }}'>{{ post.title }}</a>
+    <small><small><small>at.  {{ post.publish_time }}</small></small></small>
+    </h3>
+    {{ post.context | safe |linebreaksbr }}
+    <hr>
+{% endblock context %}

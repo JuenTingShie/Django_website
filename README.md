@@ -3,7 +3,8 @@ Learning how to make a website with Python&amp;Django.
 
 Using blow software:    
 >**Python3.7    
->Django**    
+>Django
+>uuslug**    
 
 
 What the website got now:    
@@ -11,6 +12,9 @@ What the website got now:
 >A math calculator ( [~/math/int/int/](http://sating.pythonanywhere.com/math/30/20/) )    
 >A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
 >A blog ( [~/post](http://sating.pythonanywhere.com/post/) )
+## Version 18.10.11
+>*   1.Using Bootstraps to modify blog and post
+>*   2.Trying to use [Flat-Ui](http://www.bootcss.com/p/flat-ui/) but fail(T_T)
 ## Version 18.10.10
 >*   1.Make a app 'blog',contain some post.
 >*   2.Let posts shown ny slug.
