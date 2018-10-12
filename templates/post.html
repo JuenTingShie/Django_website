@@ -2,10 +2,14 @@
 {% block title %}
 {{ post.title }}--AI寫詩
 {% endblock title %}
-{% block context %}
-    <h3><a href='/post/{{ post.slug }}'>{{ post.title }}</a>
+{% block side %}
+    <img src="{{ post.image }}" >
+{% endblock side %}
+{% block heading %}
+    <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a>
     <small><small><small>at.  {{ post.publish_time }}</small></small></small>
-    </h3>
-    {{ post.context | safe |linebreaksbr }}
-    <hr>
+    </h5>
+{% endblock heading %}
+{% block context %}
+    <blockquote>{{ post.context | safe |linebreaksbr }}</blockquote>
 {% endblock context %}

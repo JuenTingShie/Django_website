@@ -5,35 +5,53 @@
     <head>
         <title>{% block title %}{% endblock title %}</title>
         <!--Loading Bootstrap-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="{% static 'css/vendor/bootstrap.min.css' %}" rel="stylesheet">
+        <!--Loading Flat UI-->
+        <link href="{% static 'css/flat-ui.css' %}" rel="stylesheet">
+        <!--Loading Bootstrap JS,Popper.js and jQuery-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>                
-        <!--Loading Flat UI CSS-->
-        <link rel='stylesheet' href="{% static "css/flat-ui.css" %}">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+        <style>
+        .fx{
+            max-width: 750px;
+            height: auto;
+        }
+        </style>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <div class='container'-fluid>
+        <div class='container fx'>
             <div class="text-center">
                 {% include 'header.html' %}
                 {% block header %}
                 {% endblock header %}
             </div>
-            <div class='panel panel-default'>
-                <div class="panel-heading">
-                    {% block headmessage %}
-                    {% endblock headmessage %}
-                    <hr>
+            {% block navbar %}
+            {% endblock navbar %}
+            <hr>
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {% block side %}
+                        {% endblock side %}
+                    </div>
                 </div>
-                <div class="panel-body">
-                    {% block context %}
-                    {% endblock context %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {% block heading %}
+                        {% endblock heading %}
+                    </div>
+                    <div class="panel-body">
+                        {% block context %}
+                        {% endblock context %} 
+                    </div>
                 </div>
-                <div class="panel-footer">
-                    {% include 'footer.html' %}
-                </div>
+            </div>
+            <hr>
+            <div class="panel-footer">
+                {% include 'footer.html' %}
             </div>
         </div>
     </body>

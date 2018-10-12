@@ -4,8 +4,14 @@
 {% block headmessage %}{% endblock headmessage %}
 {% block context %}
     {% for post in posts %}
-        <h3><a href='/post/{{ post.slug }}'>{{ post.title }}</a>
-        </h3>at.<small>{{ post.publish_time }}</small>
-        <hr>
+    <div class="panel-heading"></div>
+<!--        <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a></h5>-->
+    <div class="panel-body">
+        <a href='/post/{{ post.slug }}'><img src="{{ post.image }}" ></a>
+    </div>
+    <div class="panel-footer">
+        <small><small>at.{{ post.publish_time }}</small></small>
+    </div>
+    <hr>
     {% endfor %}
 {% endblock context %}
