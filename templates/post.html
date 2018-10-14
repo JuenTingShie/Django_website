@@ -11,5 +11,25 @@
     </h5>
 {% endblock heading %}
 {% block context %}
+    <!--文章區域-->
     <blockquote>{{ post.context | safe |linebreaksbr }}</blockquote>
+    <hr>
 {% endblock context %}
+<!--留言-->
+{% block comment %}
+    <!--建立留言-->
+    <form action="" method="POST">
+        <lable for="poster">你的名字：</lable>
+            <input id="poster" type="text" name="poster">
+            <input type="submit" value="留言"><br>
+        <lable for="comment"></lable>
+            　　　　　<textarea id="comment" type="text" name="comment"></textarea>
+    </form>
+    <!--顯示留言-->
+    {% for c in post.comments.all%}
+        <div class="comment">
+            {{ c.poster | upper }}<small><small>@{{ c.post_time }}</small></small>:<br>
+            >{{ c.context }}
+        </div>
+    {% endfor %}
+{% endblock comment %}

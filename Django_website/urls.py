@@ -17,12 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from Django_website.views import main,math,history
 from restaurants.views import menu
-from blog.views import index,showpost
+from blog.views import index,Showpost
 
 urlpatterns = [
 	path('',index),
-    path('post/',index),
-    path('post/<slug:slug>',showpost),
+    path('post/<slug:slug>',Showpost),
     path('admin/', admin.site.urls),
 	path('math/<int:a>/<int:b>/',math),
 	path('menu/',menu),

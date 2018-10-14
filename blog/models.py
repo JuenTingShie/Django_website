@@ -3,7 +3,7 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from uuslug import slugify
 
-# Create your models here.
+### Function For Post
 class Post(models.Model):
     title = models.CharField('標題',max_length=200)
     slug = models.SlugField('網址',unique=True,editable=False)
@@ -20,6 +20,23 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+
+### Function For Comment
+class Comment(models.Model):
+    post = models.ForeignKey('Post',on_delete=models.CASCADE,related_name="comments")
+    poster = models.CharField("留言的人",max_length=10,default="陌生人")
+    context = models.TextField("留言",null=False)
+    post_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-post_time',)
+
+    def approve(selt):
+        self.approved_comment= True
+        self.save()
+
+    def __str__(self):
+        return self.poster
 
 def create_slug(instance):
     slug = slugify(instance.title)
