@@ -6,9 +6,9 @@ def index(request):
     posts = Post.objects.all()
     return render_to_response('index.html',locals())
 def showpost(request,slug):
-    try:
+#    try:
         post = Post.objects.get(slug=slug)
         if post != None:
             return render_to_response('post.html',locals())
-    except:
-        return redirect('/')
+#    except:
+#        return redirect('/')

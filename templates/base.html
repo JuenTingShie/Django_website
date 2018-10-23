@@ -16,7 +16,9 @@
         <style>
         .fx{
             max-width: 750px;
-            height: auto;
+        }
+        .side{
+            width: 360px;
         }
         </style>
 
@@ -32,8 +34,12 @@
             {% endblock navbar %}
             <hr>
             <div class="row">
+                {% block index %}
+                {% endblock index %}
+            </div>
+            <div class="row">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
+                    <div class="panel-heading side">
                         {% block side %}
                         {% endblock side %}
                     </div>
@@ -49,11 +55,9 @@
                     </div>
                 </div>
             </div>
-            <hr>
-            <div class="panel-footer">
-                {% include 'footer.html' %}
-            </div>
         </div>
+        <hr>
     </body>
+    {% include 'footer.html' %}
 </html>
 

@@ -15,6 +15,12 @@ What the website got now:
 >A math calculator ( [~/math/int/int/](http://sating.pythonanywhere.com/math/30/20/) )    
 >A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
 >A blog ( [~/post](http://sating.pythonanywhere.com/post/) )
+## Version 18.10.24
+>*   1.Re-edited index.html
+>*   2.Add 'edited_time' for Post
+>*   3.Modify time that if edited_time =/= publish_time show edited_time
+>for post.html
+
 ## Version 18.10.12
 >*   1.Using Flat-UI successful(^_^).
 >*   2.Rebuild template/(base post index header footer).html

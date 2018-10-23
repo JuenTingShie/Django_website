@@ -9,7 +9,8 @@ class Post(models.Model):
     slug = models.SlugField('網址',unique=True,editable=False)
     image = models.URLField('首頁圖片',max_length=200,blank=True)
     context = models.TextField('文章內容')
-    publish_time = models.DateTimeField('發布時間',default=timezone.now)
+    publish_time = models.DateTimeField('發布時間',auto_now_add=True)
+    edited_time = models.DateTimeField('修改時間',auto_now=True)
 
     class Meta:
         ordering = ('-publish_time',)

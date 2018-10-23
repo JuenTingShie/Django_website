@@ -1,17 +1,19 @@
 <!--index.html-->
+<style>
+    div.fx_index{
+        width: 360px;
+        float: left;
+    }
+</style>
+
 {% extends 'base.html' %}
 {% block title %}AI寫詩{% endblock title %}
 {% block headmessage %}{% endblock headmessage %}
-{% block context %}
+{% block index %}
     {% for post in posts %}
-    <div class="panel-heading"></div>
-<!--        <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a></h5>-->
-    <div class="panel-body">
-        <a href='/post/{{ post.slug }}'><img src="{{ post.image }}" ></a>
-    </div>
-    <div class="panel-footer">
-        <small><small>at.{{ post.publish_time }}</small></small>
-    </div>
-    <hr>
+        <div class="fx_index">
+            <a href='/post/{{ post.slug }}'><img src="{{ post.image }}" ></a>
+            <small><small>at.{{ post.publish_time }}</small></small>
+        </div>
     {% endfor %}
-{% endblock context %}
+{% endblock index %}

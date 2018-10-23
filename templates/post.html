@@ -6,8 +6,14 @@
     <img src="{{ post.image }}" >
 {% endblock side %}
 {% block heading %}
-    <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a>
-    <small><small><small>at.  {{ post.publish_time }}</small></small></small>
+    <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a><br>
+    <small><small><small> 
+        {% if post.edited_time != post.publish_time %}
+            修改 at.{{ post.edited_time }}
+        {% else %}
+            發布 at.{{ post.publish_time }}
+        {% endif %}
+    </small></small></small>
     </h5>
 {% endblock heading %}
 {% block context %}
