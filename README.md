@@ -15,6 +15,9 @@ What the website got now:
 >A math calculator ( [~/math/int/int/](http://sating.pythonanywhere.com/math/30/20/) )    
 >A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
 >A blog ( [~/post](http://sating.pythonanywhere.com/post/) )
+## Version 18.10.27
+>*   1.Modify CSS of index and Post, made it simpler and refresh concepts.
+>*   2.Add function to contain picture when posting.
 ## Version 18.10.24
 >*   1.Re-edited index.html
 >*   2.Add 'edited_time' for Post

@@ -7,7 +7,7 @@ from uuslug import slugify
 class Post(models.Model):
     title = models.CharField('標題',max_length=200)
     slug = models.SlugField('網址',unique=True,editable=False)
-    image = models.URLField('首頁圖片',max_length=200,blank=True)
+    image = models.ImageField('側邊圖片',upload_to='post/side',blank=True)
     context = models.TextField('文章內容')
     publish_time = models.DateTimeField('發布時間',auto_now_add=True)
     edited_time = models.DateTimeField('修改時間',auto_now=True)

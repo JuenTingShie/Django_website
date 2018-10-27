@@ -1,18 +1,19 @@
 <!--index.html-->
 <style>
-    div.fx_index{
-        width: 360px;
-        float: left;
+    .fx_index{
+        padding: 10px;
+        width: 300px;
+        text-align:center;
     }
 </style>
 
 {% extends 'base.html' %}
 {% block title %}AI寫詩{% endblock title %}
-{% block headmessage %}{% endblock headmessage %}
 {% block index %}
     {% for post in posts %}
         <div class="fx_index">
-            <a href='/post/{{ post.slug }}'><img src="{{ post.image }}" ></a>
+            <a href='/post/{{ post.slug }}'><h6>{{ post.title }}</h6><br>
+            <img class='img-rounded' src="{{ post.image }}" ></a><br>
             <small><small>at.{{ post.publish_time }}</small></small>
         </div>
     {% endfor %}
