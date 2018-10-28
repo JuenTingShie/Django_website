@@ -1,0 +1,16 @@
+<style>
+    .fx_index{
+        padding: 10px;
+        text-align:center;
+    }
+</style>
+{% extends 'base.html' %}
+{% block title %}Photos{% endblock title %}
+
+{% block photos %}
+    {% for in_photo in photos %}
+        <div class="fx_index">
+            <a href="/media/{{ in_photo.photo }}"><img src= "/media/{{ in_photo.photo.thumbnail }}"></a>
+        </div>
+    {% endfor %}
+{% endblock photos %}

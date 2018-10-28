@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+
 from Django_website.views import main,math,history
 from restaurants.views import menu
 from blog.views import index,showpost
+from photos.views import showphotos
 
 urlpatterns = [
 	path('',index),
@@ -26,5 +30,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	path('math/<int:a>/<int:b>/',math),
 	path('menu/',menu),
-    path('history/',history)
-]
+    path('history/',history),
+    path('photo/',showphotos),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

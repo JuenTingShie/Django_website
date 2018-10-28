@@ -2,19 +2,20 @@
 Learning how to make a website with Python&amp;Django.
 
 Using blow software:    
->**Python(3.7    
->Django(2.1.2    
->django-uuslug(1.1.8    
->python-slugify(1.2.6    
->pytz(2018.5    
->Unidecode(1.0.22**  
-
+>**Django(2.1.2
+>[django-stdimage(4.0.0](https://github.com/codingjoe/django-stdimage)
+>[django-uuslug(1.1.8](https://github.com/un33k/django-uuslug)**
 
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 >A math calculator ( [~/math/int/int/](http://sating.pythonanywhere.com/math/30/20/) )    
 >A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
 >A blog ( [~/post](http://sating.pythonanywhere.com/post/) )
+>A photo gallery ( [~/photo](http://sating.pythonanywhere.com/photo/) )
+## Version 18.10.28
+>*   1.Using 'stdimage' to get thumbnail,and link to original picture.
+>*   2.Fix the problem that photo won't showout for index and Photos.
+>*   3.Trying multiple files but fail.Fix will come soon ,maybe next Ver.
 ## Version 18.10.27
 >*   1.Modify CSS of index and Post, made it simpler and refresh concepts.
 >*   2.Add function to contain picture when posting.
