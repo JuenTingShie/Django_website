@@ -9,9 +9,11 @@ Using blow software:
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 >A math calculator ( [~/math/int/int/](http://sating.pythonanywhere.com/math/30/20/) )    
->A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
->A blog ( [~/post](http://sating.pythonanywhere.com/) )
+>A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )    
+>A blog ( [~/post](http://sating.pythonanywhere.com/) )    
 >A photo gallery ( [~/photo](http://sating.pythonanywhere.com/photo/) )
+## Version 18.11.2-2
+>*   1.Just simply let photo can place at the folder (YYYY/MM/DD)
 ## Version 18.11.2
 >*   1.Upload all image and add a function to change image name by Post.slug .
 >*   2.Got problem that: image upload to correct place(media/post/side/) but url will lead to wrong place(post/side/),trying to find how to solve the problem.

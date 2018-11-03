@@ -3,7 +3,7 @@ from stdimage.models import StdImageField
 
 # Create your models here.
 class Photo(models.Model):
-    photo = StdImageField(upload_to='pho/%Y/%M/%D/',blank=True,
+    photo = StdImageField(upload_to='pho/%Y/%m/%d/',null=True,
                         variations={'thumbnail': {'width': 512 , 'height': 512}})
     uploaded_at = models.DateTimeField('上傳時間',auto_now_add=True)
     
