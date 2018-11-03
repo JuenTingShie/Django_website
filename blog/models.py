@@ -21,6 +21,12 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
+    
+    def rename(instance,filename):
+        ext = filename.split('.')[-1]
+        return '{0}/{1}.{2}'.format('post/side',instance.slug,ext)
+
+    image = models.ImageField('側邊圖片',upload_to=rename,blank=True)
 
 def create_slug(instance):
     slug = slugify(instance.title)

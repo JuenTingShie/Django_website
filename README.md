@@ -2,16 +2,19 @@
 Learning how to make a website with Python&amp;Django.
 
 Using blow software:    
->**Django(2.1.2
->[django-stdimage(4.0.0](https://github.com/codingjoe/django-stdimage)
+>**Django(2.1.2    
+>[django-stdimage(4.0.0](https://github.com/codingjoe/django-stdimage)    
 >[django-uuslug(1.1.8](https://github.com/un33k/django-uuslug)**
 
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 >A math calculator ( [~/math/int/int/](http://sating.pythonanywhere.com/math/30/20/) )    
 >A menu ( [~/menu](http://sating.pythonanywhere.com/menu/) )  
->A blog ( [~/post](http://sating.pythonanywhere.com/post/) )
+>A blog ( [~/post](http://sating.pythonanywhere.com/) )
 >A photo gallery ( [~/photo](http://sating.pythonanywhere.com/photo/) )
+## Version 18.11.2
+>*   1.Upload all image and add a function to change image name by Post.slug .
+>*   2.Got problem that: image upload to correct place(media/post/side/) but url will lead to wrong place(post/side/),trying to find how to solve the problem.
 ## Version 18.10.28
 >*   1.Using 'stdimage' to get thumbnail,and link to original picture.
 >*   2.Fix the problem that photo won't showout for index and Photos.
@@ -36,7 +39,6 @@ What the website got now:
 >*   2.Let posts shown ny slug.
 >*   3.Use "uuslug" to make unique slug for each post,
 >and transfer Chinese title to pinyin slug.Learn from jianshu([Link](https://www.jianshu.com/p/2131400102a9))
-* * *
 ## Version 18.10.6
 >*   1.Make a app 'restaurants',countain some 'restaurant' 'food'    
 >And 'food.name' 'food.price' .... and else.    
