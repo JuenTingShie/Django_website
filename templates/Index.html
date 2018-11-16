@@ -1,0 +1,25 @@
+<!--Index.html-->
+<style>
+    .fx_index{
+        padding: 10px;
+        width: 300px;
+        text-align:center;
+    }
+</style>
+
+{% extends 'Base.html' %}
+{% block title %}AI寫詩{% endblock title %}
+{% block index %}
+    {% for post in posts %}
+        <div class='fx_index'>
+            <a href='/post/{{ post.slug }}'><h6>{{ post.title }}</h6><br>
+            {% if post.image %}
+                <img class='img-rounded' src="{{ post.image.url }}" ></a><br>
+            {% else %}
+
+            {% endif %}
+            <small><small>at.{{ post.publish_time }}</small></small>
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock index %}

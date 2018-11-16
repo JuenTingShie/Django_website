@@ -1,0 +1,49 @@
+<!--Header.html-->
+{% block header %}
+        <a href="/">
+        <img class="img-rounded img-responsive" src="https://poem.msxiaobing.com/Images/p1-bg.png">
+        </a>
+{% endblock header %}
+{% block navbar %}
+        <div class="row">
+                <div class="col">
+                        <nav class="navbar navbar-default navbar-expand-lg" role="navigation">
+                                <a class="navbar-brand" href="/">/</a>
+                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
+                                <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                                        <ul class="nav navbar-nav mr-auto">
+                                                <!--#1 網頁分頁 -->
+                                                <div class='btn-group'>
+                                                        <button class="btn btn-inverse dropdown-toggle" type="button" data-toggle="dropdown">
+                                                        網頁分頁
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-inverse" role="menu">
+                                                                <li class="active"><a href="/history">Website History</a></li>
+                                                                <li class="active"><a href="/photo">Photos</a></li>
+                                                                <li class="divider"></li>
+                                                                <li class="active"><a href="https://github.com/JuenTingShie/Django_website">Github</a></li>
+                                                        </ul>
+                                                </div>
+                                        </ul>
+                                </div><!-- /.navbar-collapse -->
+                        {% if request.user.is_authenticated %}
+                                <div class="collapse navbar-collapse justify-content-end">
+                                        <ul class="nav navbar-nav navbar-right">
+                                                <li><a>{{ request.user }}</a></li>
+                                                <li><a href='/accounts/logout'>登出</a></li>
+                                        </ul>
+                                </div>
+                        {% else %}
+                                <!--#2 登入 -->
+                                <div class="collapse navbar-collapse justify-content-end">
+                                        <ul class="nav navbar-nav navbar-right">
+                                                <li><a href='/accounts/login'>Login</a></li>
+                                <!--#2 註冊 -->
+                                                <li><a href='/accounts/signup'>Sign-up</a></li>
+                                        </ul>
+                                </div>
+                        {% endif %}
+                        </nav><!-- /navbar -->
+                </div>
+        </div>
+{% endblock navbar %}
