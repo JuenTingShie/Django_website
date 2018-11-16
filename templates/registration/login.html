@@ -1,0 +1,13 @@
+{% extends 'Base.html' %}
+{% block title %}
+登入--AI詩人
+{% endblock title %}
+{% block index %}
+    <form method='POST'>
+        {% csrf_token %}
+        <label for="username">用戶名稱:</label>
+        <input type="text" name="username" value="" id="username"> <br>
+        <label for="password">用戶密碼:</label>
+        <input type="password" name="password" value="" id="password"><input type="submit" value="登入" />
+    </form>
+{% endblock index %}
