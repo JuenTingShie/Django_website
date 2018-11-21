@@ -1,5 +1,7 @@
+<!--Post.html-->
 {% extends 'Base.html' %}
 {% block title %}{{ post.title }}--AI寫詩{% endblock title %}
+<!--側邊圖片-->
 {% block side %}
     {% if post.image %}
         <img src='{{ post.image.url }}'>
@@ -7,6 +9,7 @@
 
     {% endif %}
 {% endblock side %}
+<!--文章標題-->
 {% block heading %}
     <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a><br>
         <small><small><small> 
@@ -18,6 +21,32 @@
         </small></small></small>
     </h5>
 {% endblock heading %}
+<!--文章內容-->
 {% block context %}
     <blockquote>{{ post.context | safe |linebreaksbr }}</blockquote>
 {% endblock context %}
+<!--留言區塊-->
+{% block comment %}
+    <!--建立留言-->
+    <form method="POST">
+    {% csrf_token %}
+        <lable for="poster">你的名字：</lable>
+            <input id="poster" type="text" name="poster" class="form-control">
+        <lable for="context"></lable>
+            <textarea id="context" type="text" name="context" class="form-control"></textarea>
+        <input type="submit" class="btn" value="留言">
+    </form>
+    <!--顯示留言-->
+    {% if post.comments.all %}
+        <hr>
+        {% for c in post.comments.all %}
+        <div class="comment">
+            {{ c.poster | upper }}<small><small>@{{ c.post_time }}</small></small>:<br>
+            >{{ c.context }}
+        </div>
+        {% endfor %}
+    {% else %}
+        <hr>
+        <h6>尚未有留言</h6>
+    {% endif %}
+{% endblock comment %}

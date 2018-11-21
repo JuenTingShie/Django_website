@@ -18,11 +18,12 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from Django_website.views import Signup
+from Django_website.views import Signup,error404
 from blog.urls import urlpatterns as blog_urls
 
 ### Default Conf ###
 urlpatterns = [
+    path('404/',error404),
     path('admin/',admin.site.urls),
     path('accounts/signup', Signup),
     path('accounts/', include('django.contrib.auth.urls')),

@@ -11,3 +11,6 @@ def Signup(request):
     else:
         form = UserCreationForm()
     return render(request,'registration/Signup.html',{'form' : UserCreationForm()})
+
+def error404(request):
+        return render(request,'404.html',{})
