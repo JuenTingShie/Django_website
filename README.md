@@ -9,6 +9,8 @@ Using blow software:
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 
+## Version 18.11.21
+>*   1.Comment function susses(One little promble is that: after make comment,reload website will send message again.)
 ## Version 18.11.16
 >*   1.Re-build whole website.
 >*   2.What it got:
