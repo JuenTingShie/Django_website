@@ -18,7 +18,7 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from Django_website.views import Signup,error404
+from Django_website.views import Signup,error404,Dashboard
 from blog.urls import urlpatterns as blog_urls
 
 ### Default Conf ###
@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/',admin.site.urls),
     path('accounts/signup', Signup),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('dashboard/',Dashboard),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ### Blog Url Conf ###
 urlpatterns += blog_urls

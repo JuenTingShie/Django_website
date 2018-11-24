@@ -6,17 +6,17 @@
     {% if post.image %}
         <img src='{{ post.image.url }}'>
     {% else %}
-
     {% endif %}
 {% endblock side %}
 <!--文章標題-->
 {% block heading %}
     <h5><a href='/post/{{ post.slug }}'>{{ post.title }}</a><br>
-        <small><small><small> 
+        <small><small><small>
+            {{ post.author }}
             {% if post.edited_time != post.publish_time %}
-                修改 at.{{ post.edited_time }}
+                修改於>{{ post.edited_time }}
             {% else %}
-                發布 at.{{ post.publish_time }}
+                發布於>{{ post.publish_time }}
             {% endif %}
         </small></small></small>
     </h5>
@@ -24,6 +24,7 @@
 <!--文章內容-->
 {% block context %}
     <blockquote>{{ post.context | safe |linebreaksbr }}</blockquote>
+    
 {% endblock context %}
 <!--留言區塊-->
 {% block comment %}

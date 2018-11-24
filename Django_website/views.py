@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.shortcuts import redirect
@@ -13,4 +14,8 @@ def Signup(request):
     return render(request,'registration/Signup.html',{'form' : UserCreationForm()})
 
 def error404(request):
-        return render(request,'404.html',{})
+    return render(request,'404.html',{})
+
+@login_required
+def Dashboard(request):
+    return render(request,'Dashboard.html',locals())

@@ -9,6 +9,11 @@ Using blow software:
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 
+## Version 18.11.24
+>*   1.Add upload post function when login(press user name)
+>*   2.Find some error:
+>>*   1.Post.html post.image.url will not work when image is blank.
+>>*   2.Making post will not work when upload image.
 ## Version 18.11.21
 >*   1.Comment function susses(One little promble is that: after make comment,reload website will send message again.)
 ## Version 18.11.16

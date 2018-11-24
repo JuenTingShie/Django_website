@@ -8,7 +8,7 @@
         <div class="row">
                 <div class="col">
                         <nav class="navbar navbar-default navbar-expand-lg" role="navigation">
-                                <a class="navbar-brand" href="/">/</a>
+                                <a class="navbar-brand" href="/">/</a>                               
                                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
                                 <div class="collapse navbar-collapse" id="navbar-collapse-01">
                                         <ul class="nav navbar-nav mr-auto">
@@ -25,17 +25,16 @@
                                                         </ul>
                                                 </div>
                                         </ul>
-                                </div><!-- /.navbar-collapse -->
                         {% if request.user.is_authenticated %}
-                                <div class="collapse navbar-collapse justify-content-end">
+                                <div class="justify-content-end">
                                         <ul class="nav navbar-nav navbar-right">
-                                                <li><a>{{ request.user }}</a></li>
+                                                <li><a href='/dashboard/'>{{ request.user }}</a></li>
                                                 <li><a href='/accounts/logout'>登出</a></li>
                                         </ul>
                                 </div>
                         {% else %}
                                 <!--#2 登入 -->
-                                <div class="collapse navbar-collapse justify-content-end">
+                                <div class="justify-content-end">
                                         <ul class="nav navbar-nav navbar-right">
                                                 <li><a href='/accounts/login'>Login</a></li>
                                 <!--#2 註冊 -->
@@ -43,6 +42,7 @@
                                         </ul>
                                 </div>
                         {% endif %}
+                                </div><!-- /.navbar-collapse -->
                         </nav><!-- /navbar -->
                 </div>
         </div>
