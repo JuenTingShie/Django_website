@@ -1,12 +1,25 @@
 <!--Post.html-->
 {% extends 'Base.html' %}
 {% block title %}{{ post.title }}--AI寫詩{% endblock title %}
+{% block head %}
+<!--Stop Submit-->
+    <script type="text/javascript">
+    function stopRKey(evt) {
+    var evt = (evt) ? evt : ((event) ? event : null);
+    var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+    if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+    }
+    document.onkeypress = stopRKey;
+    </script> 
+{% endblock head %}
 <!--側邊圖片-->
 {% block side %}
-    {% if post.image %}
+{% if post.image == '' %}
+{% else %}
+    <div class="col side">
         <img src='{{ post.image.url }}'>
-    {% else %}
-    {% endif %}
+    </div>
+{% endif %}
 {% endblock side %}
 <!--文章標題-->
 {% block heading %}

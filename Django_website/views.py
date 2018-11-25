@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render
 from django.shortcuts import redirect
 
+from blog.models import Post
+
 def Signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -18,4 +20,5 @@ def error404(request):
 
 @login_required
 def Dashboard(request):
+    posts = Post.objects.all().order_by('-publish_time')
     return render(request,'Dashboard.html',locals())

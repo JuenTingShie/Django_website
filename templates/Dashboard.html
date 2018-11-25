@@ -3,7 +3,12 @@
 {% block title %}{{ post.title }}控制台--AI寫詩{% endblock title %}
 
 {% block index %}
-
-<h1><a href='edit/'>新增文章</a></h1>
-
+<div class="container ">
+    <h4>文章列表:</h4>
+    {% for post in posts %}
+    <li><a href='/post/{{ post.slug}}'>{{ post.title }}</a></li>
+    <small>發布於:{{ post.publish_time }}</small>
+    {% endfor %}
+    <h6><a href='edit/'>新增文章</a></h6>
+</div>
 {% endblock index %}
