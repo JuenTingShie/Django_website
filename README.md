@@ -11,11 +11,11 @@ What the website got now:
 
 ## Version 18.11.25
 >*   1.Modify Post style when where is side photo or not.
->*   2.The "Stop Submit" is keep send comment when Enter at poster input.
+>*   2.The "Stop Submit" in Post.html is keep send comment from Enter at poster input.
 >*   3.Error in this version too:
->>*   3.1.Post in post by form will not contain image.
+>>*   3.1.Post which post by form will not contain image.
 >>*   3.2.Post can't deal with the same title posts.
->>*   3.3.Login didnt set permission to do thing or not(every can edit like admin)
+>>*   3.3.Login didnt set permission to do things or not(every can edit like admin)
 ## Version 18.11.24
 >*   1.Add upload post function when login(press user name)
 >*   2.Find some error:
