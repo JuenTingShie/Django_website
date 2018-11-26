@@ -4,11 +4,13 @@
 
 {% block index %}
 <div class="container ">
+    <h6><a href='/dashboard/edit_post/'>新增文章</a></h6>
+    <h6><a href='/dashboard/edit_gallery/'>新增圖片</a></h6>
+
     <h4>文章列表:</h4>
     {% for post in posts %}
-    <li><a href='/post/{{ post.slug}}'>{{ post.title }}</a></li>
-    <small>發布於:{{ post.publish_time }}</small>
+    <li>{{ forloop.revcounter }}-<a href='/post/{{ post.slug }}'>{{ post.title }}</a>
+    <small><small>發布於:{{ post.publish_time }}</small></small></li>
     {% endfor %}
-    <h6><a href='edit/'>新增文章</a></h6>
 </div>
 {% endblock index %}

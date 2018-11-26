@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 from Django_website.views import history,Signup,error404,Dashboard
 from blog.urls import urlpatterns as blog_urls
+from gallery.urls import urlpatterns as gallery_urls
 
 ### Default Conf ###
 urlpatterns = [
@@ -32,3 +33,5 @@ urlpatterns = [
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ### Blog Url Conf ###
 urlpatterns += blog_urls
+### Gallery Url Conf ###
+urlpatterns += gallery_urls

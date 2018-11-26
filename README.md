@@ -9,6 +9,9 @@ Using blow software:
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 
+## Version 18.11.27
+>*   1.Fix side image that post by form(It can upload success now (Hooooray!)).
+>*   2.Make the Gallery back and work great(except upload multiple upload, it still developing.)
 ## Version 18.11.26
 >*   1.Admin filter and list.
 >*   2.Add author to display in each post.
