@@ -27,7 +27,8 @@ def ShowPost(request,slug):
 @login_required
 def EditPost(request):
         if request.method == 'POST':
-                form = PostForm(request.POST ,request.FILES )
+                author = Post(author = request.user)
+                form = PostForm(request.POST ,request.FILES ,instance = author)
                 if form.is_valid():
                         form.save(Post)
                 return redirect('/')

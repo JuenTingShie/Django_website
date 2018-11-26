@@ -12,7 +12,7 @@
 {% block index %}
     {% for post in posts %}
         <div class='fx_index'>
-            <a href='/post/{{ post.slug }}'><h6>{{ post.title }}</h6><br>
+            <a href='/post/{{ post.slug }}'><h6>{{ post.title }}</h6></a><br>
             {% if post.image %}
                 <img class='img-rounded' src="{{ post.image.url }}" ></a><br>
             {% else %}

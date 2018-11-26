@@ -4,7 +4,8 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 
 from blog.models import Post
-
+def history(request):
+    return render(request,'history.html',{})
 def Signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
