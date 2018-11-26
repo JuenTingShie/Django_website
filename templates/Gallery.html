@@ -1,0 +1,16 @@
+<style>
+    .fx_index{
+        padding: 10px;
+        text-align:center;
+    }
+</style>
+{% extends 'Base.html' %}
+{% block title %}Gallery{% endblock title %}
+
+{% block gallery %}
+    {% for in_image in images %}
+        <div class="fx_index">
+            <a href="{{ in_image.image.url }}"><img src= "{{ in_image.image.thumbnail.url }}"></a>
+        </div>
+    {% endfor %}
+{% endblock gallery %}

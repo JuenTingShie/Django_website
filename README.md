@@ -9,6 +9,26 @@ Using blow software:
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 
+## Version 18.11.27
+>*   1.Fix side image that post by form(It can upload success now (Hooooray!)).
+>*   2.Make the Gallery back and work great(except upload multiple upload, it still developing.)
+## Version 18.11.26
+>*   1.Admin filter and list.
+>*   2.Add author to display in each post.
+## Version 18.11.25
+>*   1.Modify Post style when where is side photo or not.
+>*   2.The "Stop Submit" in Post.html is keep send comment from Enter at poster input.
+>*   3.Error in this version too:
+>>*   3.1.Post which post by form will not contain image.
+>>*   3.2.Post can't deal with the same title posts.
+>>*   3.3.Login didnt set permission to do things or not(every can edit like admin)
+## Version 18.11.24
+>*   1.Add upload post function when login(press user name)
+>*   2.Find some error:
+>>*   1.Post.html post.image.url will not work when image is blank.
+>>*   2.Making post will not work when upload image.
+## Version 18.11.21
+>*   1.Comment function susses(One little promble is that: after make comment,reload website will send message again.)
 ## Version 18.11.16
 >*   1.Re-build whole website.
 >*   2.What it got:

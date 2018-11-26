@@ -1,0 +1,16 @@
+<!--Dashboard.html-->
+{% extends 'Base.html' %}
+{% block title %}{{ post.title }}控制台--AI寫詩{% endblock title %}
+
+{% block index %}
+<div class="container ">
+    <h6><a href='/dashboard/edit_post/'>新增文章</a></h6>
+    <h6><a href='/dashboard/edit_gallery/'>新增圖片</a></h6>
+
+    <h4>文章列表:</h4>
+    {% for post in posts %}
+    <li>{{ forloop.revcounter }}-<a href='/post/{{ post.slug }}'>{{ post.title }}</a>
+    <small><small>發布於:{{ post.publish_time }}</small></small></li>
+    {% endfor %}
+</div>
+{% endblock index %}

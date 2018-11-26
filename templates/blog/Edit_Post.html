@@ -1,0 +1,12 @@
+<!--blog/Edit_Post.html-->
+{% extends 'Base.html' %}
+{% block title %}文章編輯--AI寫詩{% endblock title %}
+
+{% block index %}
+    <h1>編輯文章</h1>
+    <form method='POST' class='post-form' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' class='btn' value='送出'>
+    </form>
+{% endblock index %}

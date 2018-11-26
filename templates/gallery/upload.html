@@ -1,0 +1,12 @@
+<!--gallery/upload.html-->
+{% extends 'Base.html' %}
+{% block title %}圖片上傳--AI寫詩{% endblock title %}
+
+{% block index %}
+    <h1>圖片上傳</h1>
+    <form method='POST' class='post-form' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' class='btn' value='送出'>
+    </form>
+{% endblock index %}

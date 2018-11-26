@@ -25,7 +25,7 @@
                 background-color: #C0C0C0
             }
         </style>
-
+        {% block head %}{% endblock head %}
     </head>
     <body>
         <div class='container fx'>
@@ -44,21 +44,19 @@
             </div>
             <!--Post Setting-->
             <div class="row justify-content-center">
-                <div class="col side">
-                    {% block side %}{% endblock side %}
-                </div>
+                {% block side %}{% endblock side %}
                 <div class="row">
                     <div class="col">
                         {% block heading %}{% endblock heading %}
                         {% block context %}{% endblock context %}
+                        {% block comment %}{% endblock comment %}
                     </div>
                 </div>
             </div>
         </div>
-
         <!--Photos Setting-->
             <div class="row justify-content-center">
-                {% block photos %}{% endblock photos %}
+                {% block gallery %}{% endblock gallery %}
             </div>
         <hr>
     </body>
