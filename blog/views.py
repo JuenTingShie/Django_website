@@ -1,38 +1,50 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Permission
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.shortcuts import redirect
 
 
-from Django_website.forms import PostForm
+from Django_website.forms import PostForm,CommentForm
 from blog.models import Post,Comment
 
 def ShowIndex(request):
     posts = Post.objects.all().order_by('-publish_time')
     return render(request,'Index.html',locals())
 def ShowPost(request,slug):
-    try:
+#    try:
         post = Post.objects.get(slug = slug)
         if request.method == 'POST':
-                Comment.objects.create(
-                        post = Post.objects.get(slug = slug),
-                        poster = request.POST['poster'],
-                        context = request.POST['context'],
-                )
-                Comment.save(post)
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                form.save()
                 return redirect('/post/'+slug)
         return render(request,'Post.html',locals())
-    except:
-        return redirect('/404')
+#    except:
+#        return redirect('/404')
+
+def EditPost(request,id):
+    if Permission.objects.get(pk=26) in request.user.user_permissions.all():
+        if id:
+            post = Post.objects.get(id = id)
+            form = PostForm(instance = post)
+            if request.method == 'POST':
+                form = PostForm(request.POST, request.FILES, instance = post,)
+                if form.is_valid():
+                    form.save()
+                return HttpResponseRedirect('/post/'+post.slug)
+        return render(request,'blog/Edit_Post.html',locals())
+    else:
+        return HttpResponseRedirect('/')
 
 @login_required
-def EditPost(request):
-        if request.method == 'POST':
-                author = Post(author = request.user)
-                form = PostForm(request.POST ,request.FILES ,instance = author)
-                if form.is_valid():
-                        form.save()
-                return HttpResponseRedirect('/')
-        else:
-                form = PostForm()
-        return render(request,'blog/Edit_Post.html',locals())
+def NewPost(request):
+    if request.method == 'POST':
+        author = Post(author = request.user)
+        form = PostForm(request.POST, request.FILES, instance = author)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/')
+    else:
+        form = PostForm()
+    return render(request,'blog/Edit_Post.html',locals())

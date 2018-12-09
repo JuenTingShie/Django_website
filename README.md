@@ -4,11 +4,19 @@ Learning how to make a website with Python&amp;Django.
 Using blow software:    
 >**Django(2.1.2    
 >[django-stdimage(4.0.0](https://github.com/codingjoe/django-stdimage)    
->[django-uuslug(1.1.8](https://github.com/un33k/django-uuslug)**
+>[django-uuslug(1.1.8](https://github.com/un33k/django-uuslug)
+>[django-simple-history(2.5.1](https://github.com/treyhunner/django-simple-history/blob/master/docs/index.rst)**
 
 What the website got now:    
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
+>A Gallery page ([~/gallery](http://sating.pythonanywhere.com/gallery) )
 
+## Version 18.12.9
+>*   1.Now can edit post in each post. It will check if user get permission(pk=26) or not.
+>*   2.Using 'django-simple-history' app but only useable in admin.
+>*   3.Fix:
+>>*   3.1.photo in index.html not clickable
+>>*   3.2.making comment will change post's edited_time.
 ## Version 18.11.27
 >*   1.Fix side image that post by form(It can upload success now (Hooooray!)).
 >*   2.Make the Gallery back and work great(except upload multiple upload, it still developing.)
