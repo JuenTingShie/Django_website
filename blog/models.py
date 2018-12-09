@@ -2,14 +2,16 @@ from django.db import models
 from django.db.models.signals import pre_save
 
 from uuslug import slugify
+from simple_history.models import HistoricalRecords
 ### Post block ###
 class Post(models.Model):
     author = models.CharField('作者',max_length = 200 ,editable = False )
     title = models.CharField('標題' ,max_length = 200 )
-    slug = models.SlugField('網址' ,unique = True ,editable = False )
+    slug = models.SlugField('網址' ,editable = False )
     context = models.TextField('文章內容' )
     publish_time = models.DateTimeField('發布時間' ,auto_now_add = True )
     edited_time = models.DateTimeField('修改時間' ,auto_now = True )
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.title
@@ -32,7 +34,7 @@ def create_slug(instance):
         new_slug='{0}{1}'.format(slug,qs.first().id)
         return new_slug
     return slug
-  
+
 def pre_save_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = create_slug(instance)
@@ -46,4 +48,4 @@ class Comment(models.Model):
     post_time = models.DateTimeField('留言時間' ,auto_now_add=True )
 
     def __str__(self):
-        return self.post
+        return self.poster

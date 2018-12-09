@@ -10,7 +10,7 @@
     if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
     }
     document.onkeypress = stopRKey;
-    </script> 
+    </script>
 {% endblock head %}
 <!--側邊圖片-->
 {% block side %}
@@ -37,7 +37,7 @@
 <!--文章內容-->
 {% block context %}
     <blockquote>{{ post.context | safe |linebreaksbr }}</blockquote>
-    
+    <small><a href="edit_/{{ post.id }}/">修改文章</a></small>
 {% endblock context %}
 <!--留言區塊-->
 {% block comment %}
@@ -45,13 +45,14 @@
     <form method="POST">
     {% csrf_token %}
         <lable for="poster">你的名字：</lable>
+            <input type="hidden" id="post" name="post" value="{{ post.id }}">
             <input id="poster" type="text" name="poster" class="form-control">
         <lable for="context"></lable>
             <textarea id="context" type="text" name="context" class="form-control"></textarea>
         <input type="submit" class="btn" value="留言">
     </form>
     <!--顯示留言-->
-    {% if post.comments.all %}
+    {% if post.comments %}
         <hr>
         {% for c in post.comments.all %}
         <div class="comment">
