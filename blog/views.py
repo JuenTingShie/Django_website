@@ -24,27 +24,30 @@ def ShowPost(request,slug):
 #        return redirect('/404')
 
 def EditPost(request,id):
-    if Permission.objects.get(pk=26) in request.user.user_permissions.all():
+    post = Post.objects.get(id = id)
+    if request.user.has_perm('blog.change_Post'):
         if id:
-            post = Post.objects.get(id = id)
             form = PostForm(instance = post)
             if request.method == 'POST':
                 form = PostForm(request.POST, request.FILES, instance = post,)
                 if form.is_valid():
                     form.save()
-                return HttpResponseRedirect('/post/'+post.slug)
+                    return HttpResponseRedirect('/post/'+post.slug)
         return render(request,'blog/Edit_Post.html',locals())
     else:
-        return HttpResponseRedirect('/')
+        return HttpResponseRedirect('/accounts/login/?next=/post/edit_/'+str(id))
 
 @login_required
 def NewPost(request):
-    if request.method == 'POST':
-        author = Post(author = request.user)
-        form = PostForm(request.POST, request.FILES, instance = author)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/')
+    if request.user.has_perm('blog.add_Post'):
+        if request.method == 'POST':
+            author = Post(author = request.user)
+            form = PostForm(request.POST, request.FILES, instance = author)
+            if form.is_valid():
+                form.save()
+                return HttpResponseRedirect('/')
+        else:
+            form = PostForm()
+        return render(request,'blog/Edit_Post.html',locals())
     else:
-        form = PostForm()
-    return render(request,'blog/Edit_Post.html',locals())
+        return HttpResponseRedirect('/dashboard/new_post/')

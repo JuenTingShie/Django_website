@@ -4,7 +4,7 @@ Learning how to make a website with Python&amp;Django.
 Using blow software:    
 >**Django(2.1.2    
 >[django-stdimage(4.0.0](https://github.com/codingjoe/django-stdimage)    
->[django-uuslug(1.1.8](https://github.com/un33k/django-uuslug)
+>[django-uuslug(1.1.8](https://github.com/un33k/django-uuslug)    
 >[django-simple-history(2.5.1](https://github.com/treyhunner/django-simple-history/blob/master/docs/index.rst)**
 
 What the website got now:    
