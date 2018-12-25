@@ -11,6 +11,23 @@
     }
     document.onkeypress = stopRKey;
     </script>
+<!--Edit scripts Block-->
+    <script>
+      function deleteFunction(){
+        if (confirm('確定要刪除嗎？')){
+            window.location="delete_/{{ post.id }}/";
+        } else {
+          //do nothings
+        }
+      }
+      function editFunction(){
+        if (confirm('確定要編輯文章嗎？')){
+          window.location="edit_/{{ post.id }}/";
+        } else {
+          //de nothings
+        }
+      }
+    </script>
 {% endblock head %}
 <!--側邊圖片-->
 {% block side %}
@@ -37,7 +54,12 @@
 <!--文章內容-->
 {% block context %}
     <blockquote>{{ post.context | safe |linebreaksbr }}</blockquote>
-    <small><a href="edit_/{{ post.id }}/">修改文章</a></small>
+  {% if perms.blog.change_post %}
+    <button class="btn" onclick="editFunction()">修改文章</button>
+  {% endif %}
+  {% if perms.blog.delete_post %}
+    <button class="btn" onclick="deleteFunction()">刪除文章</button>
+  {% endif %}
 {% endblock context %}
 <!--留言區塊-->
 {% block comment %}

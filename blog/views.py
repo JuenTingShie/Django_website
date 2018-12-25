@@ -37,9 +37,16 @@ def EditPost(request,id):
     else:
         return HttpResponseRedirect('/accounts/login/?next=/post/edit_/'+str(id))
 
+def DeletePost(request,id):
+    if request.user.has_perm('blog.delete_post'):
+        Post.objects.filter(id=id).delete()
+        return redirect('/')
+    else:
+        return HttpResponseRedirect('/accounts/login/?next=/post/delete_/'+str(id))
+
 @login_required
 def NewPost(request):
-    if request.user.has_perm('blog.add_Post'):
+    if request.user.has_perm('blog.add_post'):
         if request.method == 'POST':
             author = Post(author = request.user)
             form = PostForm(request.POST, request.FILES, instance = author)

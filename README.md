@@ -11,6 +11,10 @@ What the website got now:
 >A main page ( [~/](http://sating.pythonanywhere.com/) )    
 >A Gallery page ([~/gallery](http://sating.pythonanywhere.com/gallery) )
 
+## Version 18.12.25
+>*   聖誕節快樂,Happy Christmas.
+>*   1.New delete post function in each post.
+>*   2.Use Popup windows to check if do function or not(Javascript functions)
 ## Version 18.12.9
 >*   1.Now can edit post in each post. It will check if user get permission(pk=26) or not.
 >*   2.Using 'django-simple-history' app but only useable in admin.
